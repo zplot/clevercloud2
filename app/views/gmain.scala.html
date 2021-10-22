@@ -1,3 +1,11 @@
+@*
+* This template is called from the `index` template. This template
+* handles the rendering of the page header and body tags. It takes
+* two arguments, a `String` for the title of the page and an `Html`
+* object to insert into the body of the page.
+*@
+@(title: String)(content: Html)
+
 <!doctype html>
 <html lang="en">
 
@@ -6,21 +14,21 @@
 
 
 	<!--plugins-->
-	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/plugins/simplebar/css/simplebar.css")">
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css")">
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/plugins/metismenu/css/metisMenu.min.css")">
 	<!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet" />
-	<script src="assets/js/pace.min.js"></script>
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/css/pace.min.css")">
+	<script src="@routes.Assets.versioned("assets/js/pace.min.js\")\" type=\"text/javascript\"></script>
 	<!-- Bootstrap CSS -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-extended.css" rel="stylesheet">
-	<link href="assets/css/app.css" rel="stylesheet">
-	<link href="assets/css/icons.css" rel="stylesheet">
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/css/bootstrap.min.css")">
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/css/bootstrap-extended.css")">
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/css/app.css")">
+	<link  rel="stylesheet" href="@routes.Assets.versioned("assets/css/icons.css")">
 	<!-- Theme Style CSS -->
-	<link rel="stylesheet" href="assets/css/dark-theme.css" />
-	<link rel="stylesheet" href="assets/css/semi-dark.css" />
-	<link rel="stylesheet" href="assets/css/header-colors.css" />
+	<link rel="stylesheet" href="@routes.Assets.versioned("assets/css/dark-theme.css")">
+	<link rel="stylesheet" href="@routes.Assets.versioned("assets/css/semi-dark.css")">
+	<link rel="stylesheet" href="@routes.Assets.versioned("assets/css/header-colors.css")">
 
 </head>
 
@@ -28,7 +36,8 @@
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
-		<div class="sidebar-wrapper" data-simplebar="true">
+
+		@*<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
 					<img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
@@ -350,7 +359,7 @@
 				</li>
 			</ul>
 			<!--end navigation-->
-		</div>
+		</div>*@
 		<!--end sidebar wrapper -->
 		<!--start header -->
 		<header>
@@ -709,7 +718,7 @@
 		<!--end header -->
 		<!--start page wrapper -->
 		<div class="page-wrapper">
-			<div class="page-content">hhhhhhh</div>
+			<div class="page-content">@content</div>
 		</div>
 		<!--end page wrapper -->
 		<!--start overlay-->
@@ -819,14 +828,14 @@
 	</div>
 	<!--end switcher-->
 	<!-- Bootstrap JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="@routes.Assets.versioned("assets/js/bootstrap.bundle.min.js")" type="text/javascript"></script>
 	<!--plugins-->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-	<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
-	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="@routes.Assets.versioned("assets/js/jquery.min.js")" type="text/javascript"></script>
+	<script src="@routes.Assets.versioned("assets/plugins/simplebar/js/simplebar.min.js")" type="text/javascript"></script>
+	<script src="@routes.Assets.versioned("assets/plugins/metismenu/js/metisMenu.min.js")" type="text/javascript"></script>
+	<script src="@routes.Assets.versioned("assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js")" type="text/javascript"></script>
 	<!--app JS-->
-	<script src="assets/js/app.js"></script>
+	<script src="@routes.Assets.versioned("assets/js/app.js")" type="text/javascript"></script>
 </body>
 
 </html>
