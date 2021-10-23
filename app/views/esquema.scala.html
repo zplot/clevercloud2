@@ -1,0 +1,26 @@
+
+@(datosQueMePasan: (String, String, Datos))
+
+
+@mainEsquema(datosQueMePasan._1) {
+    @*
+    Esto que está entre llaves es el segundo parámetro que enviamos a mainEsquema.scala.html
+    Aquí debe ir el contenido esencial de lo que se quiere mostrar en la página en forma de
+    contenido dinámico
+    *@
+
+
+    <br><br>
+    <article>
+    <h1>This is: @datosQueMePasan._2</h1>
+
+    </article>
+
+    @esqueleto(datosQueMePasan._3)
+}
+
+    @*
+
+    routes --> EsquemaController -->  esquema.scala.html -->  mainEsquema.scala.html
+
+    *@

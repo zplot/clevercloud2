@@ -15,4 +15,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /graphics                   controllers.HomeController.gindex
 
+GET     /esquema                controllers.EsquemaController.esquema
+
       
