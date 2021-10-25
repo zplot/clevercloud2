@@ -20,4 +20,11 @@ class EsquemaController @Inject()(cc: ControllerComponents) extends AbstractCont
     Ok(views.html.esquema(parameters))
   }
 
+  def completa = Action {
+
+
+
+    Ok(views.html.matcompleta())
+  }
+
 }

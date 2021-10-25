@@ -17,4 +17,6 @@ GET     /graphics                   controllers.HomeController.gindex
 
 GET     /esquema                controllers.EsquemaController.esquema
 
+GET     /completa                controllers.EsquemaController.completa
+
       
