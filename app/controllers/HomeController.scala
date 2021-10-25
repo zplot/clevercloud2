@@ -2,6 +2,7 @@ package controllers
 
 import javax.inject._
 import play.api.mvc._
+import models._
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -17,11 +18,16 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
    * a path of `/`.
    */
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+
+    val datosParaPasar: Datos = Datos("Hola", 457, List(1,2,3,4,5,6,7))
+
+    val pageTitle = "Math & Code"
+    val texto2 = "Esto está en la variable texto2 definida en EsquemaController"
+
+    val parameters: (String, String, Datos) = (pageTitle, texto2, datosParaPasar)
+
+    Ok(views.html.esquema5(parameters))
   }
 
-  def gindex = Action {
-    Ok(views.html.gindex("Your new application is ready."))
-  }
 
 }
