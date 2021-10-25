@@ -20,11 +20,16 @@ class EsquemaController @Inject()(cc: ControllerComponents) extends AbstractCont
     Ok(views.html.esquema(parameters))
   }
 
-  def completa = Action {
+  def esquema5 = Action {
 
+    val datosParaPasar: Datos = Datos("Hola", 457, List(1,2,3,4,5,6,7))
 
+    val texto1 = "Título de la página"
+    val texto2 = "Esto está en la variable texto2 definida en EsquemaController"
 
-    Ok(views.html.matcompleta())
+    val parameters: (String, String, Datos) = (texto1, texto2, datosParaPasar)
+
+    Ok(views.html.esquema5(parameters))
   }
 
 }
