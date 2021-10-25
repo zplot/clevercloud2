@@ -6,10 +6,21 @@
 
     <h1>This is: @datosQueMePasan._2</h1>
 
-    @esqueleto(datosQueMePasan._3)
+    <div class="wrapper">
+        <h1>Dato dinámico: @datosQueMePasan._3</h1>
+    </div>
+
+
+    <div id="content" class="wrapper doc">
+
+        <h1>Estoy en esqueleto</h1>
+        <h3>Esto es un dato dinámico definido en el controlador: @datosQueMePasan._3.toString</h3>
+        <p>Estoy en esqueleto</p>
+        <h3>Esto es texto estático</h3>
+        <h3>Esto es un dato dinámico definido en el controlador: @datosQueMePasan._3.toString</h3>
+    </div>
 }
 
 @*
 routes --> HomeController.index -->  esquema.scala.html -->  main.scala.html
-esqueleto.scala.html es código html que se le pasa a mainEsquema, no es un eslabón de la cadena
 *@

@@ -23,6 +23,5 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 
 /*
 routes --> HomeController.index -->  esquema.scala.html -->  main.scala.html
-esqueleto.scala.html es código html que se le pasa a mainEsquema, no es un eslabón de la cadena
 */
 
