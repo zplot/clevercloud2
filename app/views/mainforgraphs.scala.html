@@ -1,10 +1,4 @@
-
-@*
-@(title: String)(jshead: Html)(content: Html)(credit: String)(jsbody: Html)
-*@
-
 @(datos: D3jsParameters)
-
 
 <!DOCTYPE html>
 
@@ -17,7 +11,6 @@
 
 <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
 
-        <!-- BEGIN: Header-->
     <header class="page-topbar" id="header">
         <div class="navbar navbar-fixed">
             <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
@@ -36,16 +29,13 @@
         </div>
     </header>
 
-
     @sidenav()
 
-        <!-- BEGIN: Page Main-->
     <div id="main">
         <div class="row">
             <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
             <div class="col s12">
                 <div class="container">
-                        <!-- knowledge -->
                     <div class="section" id="knowledge">
                         <div class="row knowledge-content">
                             <div class="col s12 card-content-link">
@@ -55,7 +45,7 @@
                                             <div class="col s12">
                                                 <div class="contenido">
 
-                                                @graph1content(datos)
+                                                @graph1content()
 
                                                 </div>
                                             </div>
