@@ -1,26 +1,25 @@
 
-@(datosQueMePasan: (String, String, Datos))
+@(parameters: (String, String, Datos))
 
+@main(parameters._1) {
 
-@main(datosQueMePasan._1) {
-
-    <h1>This is: @datosQueMePasan._2</h1>
+    <h1>This is: @parameters._2</h1>
 
     <div class="wrapper">
-        <h1>Dato dinámico: @datosQueMePasan._3</h1>
+        <h1>Dato dinámico: @parameters._3</h1>
     </div>
-
 
     <div id="content" class="wrapper doc">
 
         <h1>Estoy en esqueleto</h1>
-        <h3>Esto es un dato dinámico definido en el controlador: @datosQueMePasan._3.toString</h3>
+        <h3>Esto es un dato dinámico definido en el controlador: @parameters._3.toString</h3>
         <p>Estoy en esqueleto</p>
         <h3>Esto es texto estático</h3>
-        <h3>Esto es un dato dinámico definido en el controlador: @datosQueMePasan._3.toString</h3>
+        <h3>Esto es un dato dinámico definido en el controlador: @parameters._3.toString</h3>
     </div>
 }
 
 @*
 routes --> HomeController.index -->  esquema.scala.html -->  main.scala.html
 *@
+
