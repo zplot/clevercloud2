@@ -5,8 +5,8 @@
 <html class="loading" lang="en" data-textdirection="ltr">
 
     <head>
-        @generichead(datos.pageTitle)
-        @graph1jsHead()
+        @generic.generichead(datos.pageTitle)
+        @specific.graph1jsHead()
     </head>
 
 <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
@@ -29,7 +29,7 @@
         </div>
     </header>
 
-    @sidenav()
+    @generic.sidenav()
 
     <div id="main">
         <div class="row">
@@ -45,7 +45,7 @@
                                             <div class="col s12">
                                                 <div class="contenido">
 
-                                                @graph1content()
+                                                @specific.graph1content()
 
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@
     <script src="@routes.Assets.versioned("js/search.js")"></script>
     <script src="@routes.Assets.versioned("js/custom/custom-script.js")"></script>
     <script src="@routes.Assets.versioned("js/scripts/customizer.js")"></script>
-    @graph1jsBody()
+    @specific.graph1jsBody()
 
 </body>
 </html>

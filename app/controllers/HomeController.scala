@@ -16,7 +16,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 
     val parameters: (String, String, Datos) = (pageTitle, texto2, datosParaPasar)
 
-    Ok(views.html.esquema(parameters))
+    Ok(views.html.generic.esquema(parameters))
   }
 
 }
