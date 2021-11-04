@@ -21,4 +21,11 @@ class D3jsController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.generic.graph1(datos))
   }
 
+  def functionplot = Action {
+
+    val pageTitle: String = "Math & Code"
+
+    Ok(views.html.functionplot(pageTitle))
+  }
+
 }
