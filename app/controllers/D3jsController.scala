@@ -23,7 +23,7 @@ class D3jsController @Inject()(cc: ControllerComponents) extends AbstractControl
 
   def functionplot = Action {
 
-    val pageTitle: String = "Math & Code"
+    val pageTitle: String = "Math & Code graph view"
 
     Ok(views.html.functionplot(pageTitle))
   }
