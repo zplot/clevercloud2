@@ -1,4 +1,4 @@
-import algebra._
+import models.algebra._
 
 object PruebaFp extends App {
 
