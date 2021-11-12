@@ -88,7 +88,8 @@ case class FiniteField(p: Int, w: Int) extends Field {
       }
     }
 
-    override def toString = "(" + "(" + f.toString + ") mod h)"
+    //override def toString = "(" + "(" + f.toString + ") mod h)"
+    override def toString: String = f.toString + " mod h"
 
     override def equals(other: Any): Boolean = {
       val that = other.asInstanceOf[FiniteFieldElement]

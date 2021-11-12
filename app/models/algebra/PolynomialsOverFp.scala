@@ -322,7 +322,7 @@ class PolynomialsOverFp private(val field: Fp)  {
       def printPol(a: List[(Int, field.T2)]): String = a match {
         case Nil => ""
         case x :: xs if x._1 == 0 => x._2.toString + " + " + printPol(xs)
-        case x :: xs if x._1 == 1 && x._2.toString == field.one => "x" + " + " + printPol(xs)
+        case x :: xs if x._1 == 1 && x._2 == field.one => "x" + " + " + printPol(xs)
         case x :: xs if x._1 == 1 => x._2.toString + "x" + " + " + printPol(xs)
         case x :: xs if x._2 == field.one => "x" + x._1.toString + " + " + printPol(xs)
         case x :: xs => x._2.toString + "x" + x._1.toString + " + " + printPol(xs)
