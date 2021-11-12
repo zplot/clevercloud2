@@ -11,11 +11,16 @@ GET     /count                      controllers.CountController.count
 GET     /message                    controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
 
 GET     /graph1                     controllers.D3jsController.graph1
 
 GET     /functionplot               controllers.D3jsController.functionplot
+
+GET     /widgets                    controllers.WidgetController.listWidgets
+POST    /widgets                    controllers.WidgetController.createWidget
+
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 
 

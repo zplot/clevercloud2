@@ -84,7 +84,7 @@ object TestPolynomialsOverFp extends App {
     2 -> util(1),
     1 -> util(1),
     0 -> util(2)))
-  println(f + "is irreducible == " + f.isIrreducible)
+  println(f.toString + "is irreducible == " + f.isIrreducible)
 
   println()
   println("Ahora empieza findIrredPol")
