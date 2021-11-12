@@ -1,9 +1,22 @@
 package models
 
-case class Datos(parametro1: String, parametro2: Int, parametro3: List[Int]) {
-  val dato1 = parametro1
-  val dato2 = parametro2
-  val dato3 = parametro3
-}
+import play.twirl.api.Html
+
+
+case class Section(
+                    sectionId: Int,
+                    sectionHeader: String,
+                    sectionContentHTML: play.twirl.api.Html
+                  )
+
+case class Page(
+                 pageTitle: String,
+                 pageHeader: String,
+                 sectionList: List[Section]
+               )
+
+case class TextData(
+                     text: String,
+                   )
 
 
