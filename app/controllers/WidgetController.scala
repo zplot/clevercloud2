@@ -9,6 +9,7 @@ import play.api.mvc._
 
 import scala.collection._
 
+
 /**
  * The classic WidgetController using MessagesAbstractController.
  *
