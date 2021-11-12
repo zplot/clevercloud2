@@ -2,7 +2,7 @@ package controllers
 
 import javax.inject.Inject
 
-import models.Widget
+import models.Widget2
 import play.api.data._
 import play.api.i18n._
 import play.api.mvc._
@@ -21,18 +21,18 @@ import scala.collection._
  * for details.
  */
 class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
-  import WidgetForm._
+  import WidgetForm2._
 
   private val widgets = mutable.ArrayBuffer(
-    Widget("Widget 1", 123),
-    Widget("Widget 2", 456),
-    Widget("Widget 3", 789)
+    Widget2("Widget 1"),
+    Widget2("Widget 2"),
+    Widget2("Widget 3")
   )
 
   // The URL to the widget.  You can call this directly from the template, but it
   // can be more convenient to leave the template completely stateless i.e. all
   // of the "WidgetController" references are inside the .scala file.
-  private val postUrl = routes.WidgetController.createWidget
+  private val postUrl = routes.WidgetController2.createWidget
 
   def index = Action {
     Ok(views.html.index())
@@ -40,7 +40,7 @@ class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends Mess
 
   def listWidgets = Action { implicit request: MessagesRequest[AnyContent] =>
     // Pass an unpopulated form to the template
-    Ok(views.html.listWidgets(widgets.toSeq, form, postUrl))
+    Ok(views.html.listWidgets2(widgets.toSeq, form, postUrl))
   }
 
   // This will be the action that handles our form post
@@ -49,14 +49,14 @@ class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends Mess
       // This is the bad case, where the form had validation errors.
       // Let's show the user the form again, with the errors highlighted.
       // Note how we pass the form with errors to the template.
-      BadRequest(views.html.listWidgets(widgets.toSeq, formWithErrors, postUrl))
+      BadRequest(views.html.listWidgets2(widgets.toSeq, formWithErrors, postUrl))
     }
 
     val successFunction = { data: Data =>
       // This is the good case, where the form was successfully parsed as a Data object.
-      val widget = Widget(name = data.name, price = data.price)
+      val widget = Widget2(name = data.name)
       widgets += widget
-      Redirect(routes.WidgetController.listWidgets).flashing("info" -> "Widget added!")
+      Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
     }
 
     val formValidationResult = form.bindFromRequest()
