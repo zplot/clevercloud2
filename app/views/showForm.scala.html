@@ -1,6 +1,6 @@
 @(form: Form[Form1.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
 
-@main3("Request") {
+@mainViewToIncludeForm("Request") {
 
     <h1>Please enter your request</h1>
 
@@ -28,5 +28,7 @@
 
 
         <button>Send request</button>
+
+
     }
 }

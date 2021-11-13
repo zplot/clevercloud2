@@ -30,7 +30,7 @@ class FormController1 @Inject()(cc: MessagesControllerComponents) extends Messag
 
   def showAnswer = Action { implicit request: MessagesRequest[AnyContent] =>
     // Pass an unpopulated form to the template
-    Ok(views.html.listWidgets2(form, postUrl))
+    Ok(views.html.showForm(form, postUrl))
   }
 
   // This will be the action that handles our form post
@@ -39,7 +39,7 @@ class FormController1 @Inject()(cc: MessagesControllerComponents) extends Messag
       // This is the bad case, where the form had validation errors.
       // Let's show the user the form again, with the errors highlighted.
       // Note how we pass the form with errors to the template.
-      BadRequest(views.html.listWidgets2(formWithErrors, postUrl))
+      BadRequest(views.html.showForm(formWithErrors, postUrl))
     }
 
     val successFunction = { data: Data =>
@@ -47,7 +47,7 @@ class FormController1 @Inject()(cc: MessagesControllerComponents) extends Messag
       val textoPasado = SentData(name = data.name)
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
-      Ok(views.html.paraForms(textoPasado)).flashing("info" -> "Widget added!")
+      Ok(views.html.showFormAnswer(textoPasado)).flashing("info" -> "Widget added!")
     }
 
     val formValidationResult = form.bindFromRequest()
