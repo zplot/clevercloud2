@@ -1,13 +1,10 @@
 package controllers
 
 import javax.inject.Inject
-import models.Widget2
+import models.SentData
 import play.api.data._
-import play.api.i18n._
 import play.api.mvc._
-import views.html.main3
 
-import scala.collection._
 
 
 /**
@@ -50,7 +47,7 @@ class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends Mess
 
     val successFunction = { data: Data =>
       // This is the good case, where the form was successfully parsed as a Data object.
-      val textoPasado = Widget2(name = data.name)
+      val textoPasado = SentData(name = data.name)
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
       Ok(views.html.generic.paraForms(textoPasado))
