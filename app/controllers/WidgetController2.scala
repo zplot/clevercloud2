@@ -25,16 +25,16 @@ class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends Mess
   // The URL to the widget.  You can call this directly from the template, but it
   // can be more convenient to leave the template completely stateless i.e. all
   // of the "WidgetController" references are inside the .scala file.
-  private val postUrl = routes.WidgetController2.createWidget
+  private val postUrl = routes.WidgetController2.askForData
 
 
-  def listWidgets = Action { implicit request: MessagesRequest[AnyContent] =>
+  def showAnswer = Action { implicit request: MessagesRequest[AnyContent] =>
     // Pass an unpopulated form to the template
     Ok(views.html.listWidgets2(form, postUrl))
   }
 
   // This will be the action that handles our form post
-  def createWidget = Action { implicit request: MessagesRequest[AnyContent] =>
+  def askForData = Action { implicit request: MessagesRequest[AnyContent] =>
     val errorFunction = { formWithErrors: Form[Data] =>
       // This is the bad case, where the form had validation errors.
       // Let's show the user the form again, with the errors highlighted.
