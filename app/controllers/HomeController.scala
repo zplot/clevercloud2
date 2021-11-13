@@ -31,5 +31,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.generic.pag1(page1))
   }
 
+
+
 }
 

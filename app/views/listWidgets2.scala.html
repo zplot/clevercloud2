@@ -1,4 +1,4 @@
-@(widgets: Seq[Widget2], form: Form[WidgetForm2.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
+@(form: Form[WidgetForm2.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
 
 @main3("Widgets2") {
 
@@ -9,18 +9,7 @@
     <div>@name: @value</div>
     }
 
-    <table>
-        <thead>
-            <tr><th>Name</th></tr>
-        </thead>
-        <tbody>
-        @for(w <- widgets) {
-            <tr><td>@w.name</td></tr>
-        }
-        </tbody>
-    </table>
 
-    <hr/>
 
     @* Global errors are not tied to any particular form field *@
     @if(form.hasGlobalErrors) {
