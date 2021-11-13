@@ -20,8 +20,8 @@ GET     /functionplot               controllers.D3jsController.functionplot
 GET     /widgets                    controllers.WidgetController.listWidgets
 POST    /widgets                    controllers.WidgetController.createWidget
 
-GET     /widgets2                   controllers.WidgetController2.showAnswer
-POST    /widgets2                   controllers.WidgetController2.askForData
+GET     /form1                   controllers.FormController1.showAnswer
+POST    /form1                    controllers.FormController1.askForData
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 

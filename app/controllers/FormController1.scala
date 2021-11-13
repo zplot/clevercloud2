@@ -17,7 +17,7 @@ import play.api.mvc._
  * See https://www.playframework.com/documentation/2.8.x/ScalaForms#passing-messagesprovider-to-form-helpers
  * for details.
  */
-class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
+class FormController1 @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
   import WidgetForm2._
 
 
@@ -25,7 +25,7 @@ class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends Mess
   // The URL to the widget.  You can call this directly from the template, but it
   // can be more convenient to leave the template completely stateless i.e. all
   // of the "WidgetController" references are inside the .scala file.
-  private val postUrl = routes.WidgetController2.askForData
+  private val postUrl = routes.FormController1.askForData
 
 
   def showAnswer = Action { implicit request: MessagesRequest[AnyContent] =>
