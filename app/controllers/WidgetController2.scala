@@ -47,7 +47,7 @@ class WidgetController2 @Inject()(cc: MessagesControllerComponents) extends Mess
       val textoPasado = SentData(name = data.name)
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
-      Ok(views.html.generic.paraForms(textoPasado))
+      Ok(views.html.paraForms(textoPasado)).flashing("info" -> "Widget added!")
     }
 
     val formValidationResult = form.bindFromRequest()

@@ -18,7 +18,7 @@ class D3jsController @Inject()(cc: ControllerComponents) extends AbstractControl
 
     val datos: D3jsParameters = D3jsParameters(pageTitle, graph1Data)
 
-    Ok(views.html.generic.graph1(datos))
+    Ok(views.html.graph1(datos))
   }
 
   def functionplot = Action {

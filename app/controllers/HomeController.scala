@@ -16,8 +16,8 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     val header = "Cabecera de la página"
 
 
-    val estoEsHtml: play.twirl.api.Html = views.html.generic.ejemplo()
-    val sinxfun: play.twirl.api.Html = views.html.specific.sinx()
+    val estoEsHtml: play.twirl.api.Html = views.html.ejemplo()
+    val sinxfun: play.twirl.api.Html = views.html.sinx()
 
     val section1 = Section(1, "Cabecera de la sección 1", estoEsHtml)
 
@@ -28,7 +28,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     val sections = List(section1, section2, section3)
     val page1 = Page(title, header, sections)
 
-    Ok(views.html.generic.pag1(page1))
+    Ok(views.html.pag1(page1))
   }
 
 
