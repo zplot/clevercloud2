@@ -18,7 +18,7 @@ import play.api.mvc._
  * for details.
  */
 class FormController1 @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
-  import WidgetForm2._
+  import Form1._
 
 
 
