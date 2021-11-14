@@ -1,9 +1,11 @@
 package controllers
 
+import models.SentGraphData
+
 import javax.inject.Inject
-import models.GraphData
 import play.api.data._
 import play.api.mvc._
+
 
 
 
@@ -18,7 +20,7 @@ import play.api.mvc._
  * for details.
  */
 class GraphController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
-  import Form1._
+  import Graph1._
 
 
 
@@ -30,27 +32,28 @@ class GraphController @Inject()(cc: MessagesControllerComponents) extends Messag
 
   def showAnswer = Action { implicit request: MessagesRequest[AnyContent] =>
     // Pass an unpopulated form to the template
-    Ok(views.html.showForm(form, postUrl))
+    Ok(views.html.showGraph(formG, postUrl))
+
   }
 
   // This will be the action that handles our form post
   def askForData = Action { implicit request: MessagesRequest[AnyContent] =>
-    val errorFunction = { formWithErrors: Form[Data] =>
+    val errorFunction = { formWithErrors: Form[DataG] =>
       // This is the bad case, where the form had validation errors.
       // Let's show the user the form again, with the errors highlighted.
       // Note how we pass the form with errors to the template.
-      BadRequest(views.html.showForm(formWithErrors, postUrl))
+      BadRequest(views.html.showGraph(formWithErrors, postUrl))
     }
 
-    val successFunction = { data: Data =>
+    val successFunction = { data: DataG =>
       // This is the good case, where the form was successfully parsed as a Data object.
-      val textoPasado = GraphData(name = data.name)
+      val datosPasados = SentGraphData(data.name, data.function)
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
-      Ok(views.html.showGraph(textoPasado)).flashing("info" -> "Widget added!")
+      Ok(views.html.showGraphAnswer(datosPasados)).flashing("info" -> "Widget added!")
     }
 
-    val formValidationResult = form.bindFromRequest()
+    val formValidationResult = formG.bindFromRequest()
     formValidationResult.fold(errorFunction, successFunction)
   }
 }

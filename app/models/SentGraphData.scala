@@ -7,4 +7,10 @@ package models
  * which are used for reads, distinct from the form processing DTO,
  * which are used for writes.
  */
-case class GraphData(name: String)
+
+/**
+ * Esos datos son los que se pasan a la view showGraphAnswer que es la encargada de presentar el gráfico
+ */
+
+
+case class SentGraphData(val name: String, val function: String)
