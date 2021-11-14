@@ -22,9 +22,9 @@
                 data: [{
                     fn: '@datosPasados.function'
                 }],
-                grid: true,
-                yAxis: {domain: [-1, 1]},
-                xAxis: {domain: [0, 2*Math.PI]}
+                grid: @datosPasados.grid,
+                xAxis: {domain: [@datosPasados.xAxisFrom, @datosPasados.xAxisTo]},
+                yAxis: {domain: [@datosPasados.yAxisFrom, @datosPasados.yAxisTo]}
             });
     </script>
 

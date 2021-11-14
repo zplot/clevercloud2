@@ -17,7 +17,7 @@ object Graph1 {
                     xAxisTo: String,
                     yAxisFrom: String,
                     yAxisTo: String,
-                    grid: String,
+                    grid: Boolean,
                     graphColor: String
                   )
 
@@ -34,7 +34,7 @@ object Graph1 {
       "xAxisTo" -> nonEmptyText,
       "yAxisFrom" -> nonEmptyText,
       "yAxisTo" -> nonEmptyText,
-      "grid" -> text,
+      "grid" -> boolean,
       "graphColor" -> text
     )(DataG.apply)(DataG.unapply)
   )
