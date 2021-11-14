@@ -32,7 +32,7 @@ class GraphController @Inject()(cc: MessagesControllerComponents) extends Messag
 
   def showAnswer = Action { implicit request: MessagesRequest[AnyContent] =>
     // Pass an unpopulated form to the template
-    Ok(views.html.showGraph(formG, postUrl))
+    Ok(views.html.showGraphForm(formG, postUrl))
 
   }
 
@@ -42,7 +42,7 @@ class GraphController @Inject()(cc: MessagesControllerComponents) extends Messag
       // This is the bad case, where the form had validation errors.
       // Let's show the user the form again, with the errors highlighted.
       // Note how we pass the form with errors to the template.
-      BadRequest(views.html.showGraph(formWithErrors, postUrl))
+      BadRequest(views.html.showGraphForm(formWithErrors, postUrl))
     }
 
     val successFunction = { data: DataG =>
