@@ -13,4 +13,15 @@ package models
  */
 
 
-case class SentGraphData(val name: String, val function: String)
+case class SentGraphData(
+                          val name: String,
+                          val function: String,
+                          val xAxisFrom: String,
+                          val xAxisTo: String,
+                          val yAxisFrom: String,
+                          val yAxisTo: String,
+                          val grid: String,
+                          val graphColor: String
+                        )
+
+

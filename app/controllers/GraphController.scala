@@ -47,7 +47,15 @@ class GraphController @Inject()(cc: MessagesControllerComponents) extends Messag
 
     val successFunction = { data: DataG =>
       // This is the good case, where the form was successfully parsed as a Data object.
-      val datosPasados = SentGraphData(data.name, data.function)
+      val datosPasados = SentGraphData(
+                                        data.name,
+                                        data.function,
+                                        data.xAxisFrom,
+                                        data.xAxisTo,
+                                        data.xAxisFrom,
+                                        data.yAxisTo,
+                                        data.grid,
+                                        data.graphColor)
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
       Ok(views.html.showGraphAnswer(datosPasados)).flashing("info" -> "Widget added!")

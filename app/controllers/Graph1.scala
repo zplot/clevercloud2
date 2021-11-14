@@ -10,8 +10,16 @@ object Graph1 {
    * Using a class specifically for form binding reduces the chances
    * of a parameter tampering attack and makes code clearer.
    */
-  case class DataG(name: String,
-                  function: String)
+  case class DataG(
+                    name: String,
+                    function: String,
+                    xAxisFrom: String,
+                    xAxisTo: String,
+                    yAxisFrom: String,
+                    yAxisTo: String,
+                    grid: String,
+                    graphColor: String
+                  )
 
   /**
    * The form definition for the "create a widget" form.
@@ -21,7 +29,13 @@ object Graph1 {
   val formG: Form[DataG] = Form(
     mapping(
       "name" -> nonEmptyText,
-      "function" -> nonEmptyText
+      "function" -> nonEmptyText,
+      "xAxisFrom" -> nonEmptyText,
+      "xAxisTo" -> nonEmptyText,
+      "yAxisFrom" -> nonEmptyText,
+      "yAxisTo" -> nonEmptyText,
+      "grid" -> text,
+      "graphColor" -> text
     )(DataG.apply)(DataG.unapply)
   )
 }
