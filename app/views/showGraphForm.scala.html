@@ -2,6 +2,8 @@
 
 @mainViewToIncludeForm("Request") {
 
+  <div class="inputform1">
+
   <h1>Please enter your request</h1>
 
   @* Flash shows updates to a page *@
@@ -23,17 +25,20 @@
   @helper.form(postUrl) {
     @helper.CSRF.formField
 
-    @helper.inputText(form("name"))
-    @helper.inputText(form("function"))
-    @helper.inputText(form("xAxisFrom"))
-    @helper.inputText(form("xAxisTo"))
-    @helper.inputText(form("yAxisFrom"))
-    @helper.inputText(form("yAxisTo"))
-    @helper.inputText(form("graphColor"))
+    @helper.inputText(form("name"), '_label -> "Function name:")
+    @helper.inputText(form("function"), '_label -> "Function to plot in javascript languaje:")
+    @helper.inputText(form("xAxisFrom"), '_label -> "X axis from:")
+    @helper.inputText(form("xAxisTo"), '_label -> "X axis to:")
+    @helper.inputText(form("yAxisFrom"), '_label -> "Y axis from:")
+    @helper.inputText(form("yAxisTo"), '_label -> "Y axis to:")
+    @helper.inputText(form("graphColor"), '_label -> "Graph color:")
+
 
 
 
     <button class="btn mb-1 waves-effect waves-light mr-1" type="submit" name="action">Submit</button>
+
+  </div>
 
 
   }
