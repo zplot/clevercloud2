@@ -20,9 +20,9 @@
             functionPlot({
                 target: '#root',
                 data: [{
-                    fn: '@datosPasados.function'
+                    fn: '@datosPasados.function', color: '@datosPasados.graphColor'
                 }],
-                grid: @datosPasados.grid,
+                grid: true,
                 xAxis: {domain: [@datosPasados.xAxisFrom, @datosPasados.xAxisTo]},
                 yAxis: {domain: [@datosPasados.yAxisFrom, @datosPasados.yAxisTo]}
             });

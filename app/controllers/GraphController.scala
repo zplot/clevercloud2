@@ -54,7 +54,6 @@ class GraphController @Inject()(cc: MessagesControllerComponents) extends Messag
                                         data.xAxisTo,
                                         data.xAxisFrom,
                                         data.yAxisTo,
-                                        data.grid,
                                         data.graphColor)
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")

@@ -17,7 +17,6 @@ object Graph1 {
                     xAxisTo: String,
                     yAxisFrom: String,
                     yAxisTo: String,
-                    grid: Boolean,
                     graphColor: String
                   )
 
@@ -28,13 +27,12 @@ object Graph1 {
    */
   val formG: Form[DataG] = Form(
     mapping(
-      "name" -> nonEmptyText,
+      "name" -> text,
       "function" -> nonEmptyText,
       "xAxisFrom" -> nonEmptyText,
       "xAxisTo" -> nonEmptyText,
       "yAxisFrom" -> nonEmptyText,
       "yAxisTo" -> nonEmptyText,
-      "grid" -> boolean,
       "graphColor" -> text
     )(DataG.apply)(DataG.unapply)
   )

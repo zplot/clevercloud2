@@ -20,7 +20,6 @@ case class SentGraphData(
                           val xAxisTo: String,
                           val yAxisFrom: String,
                           val yAxisTo: String,
-                          val grid: Boolean,
                           val graphColor: String
                         )
 
