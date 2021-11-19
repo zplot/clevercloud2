@@ -1,5 +1,6 @@
 package models.algebra
 
+
 import scala._
 import scala.annotation.tailrec
 

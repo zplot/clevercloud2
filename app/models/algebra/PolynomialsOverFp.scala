@@ -1,6 +1,10 @@
 package models.algebra
 
-import  Utils._
+
+
+import Utils._
+
+
 
 /**
   * builder of a Polynomial Ring over field
@@ -20,10 +24,8 @@ class PolynomialsOverFp private(val field: Fp)  {
   type T1 = Map[Int, field.T2]
   type T2 = Polynomial
 
-
-
   // takes a Map[Int, field.T2] and builds a Polynomial
-  def builder(x: Map[Int, field.FpElement]) = Polynomial(x)
+  def builder(x: Map[Int, field.FpElement]): T2 = Polynomial(x)
 
   // takes a Map[Int, Int] and builds a Polynomial
   def builder(x: IntMap): T2 = {
@@ -164,7 +166,7 @@ class PolynomialsOverFp private(val field: Fp)  {
     }
 
     // Creo que esto es para comparar monomios de acuerdo con el grado
-    def comp(monomial1: (Int, field.T2), monomial2: (Int, field.T2)) = monomial1._1 > monomial2._1
+    def comp(monomial1: (Int, field.T2), monomial2: (Int, field.T2)): Boolean = monomial1._1 > monomial2._1
 
   }
 
@@ -178,7 +180,13 @@ class PolynomialsOverFp private(val field: Fp)  {
 
   class Polynomial private(val map: T1)  {
 
-    def add(other: T2) = {
+    def evaluate(x: field.T2): Any = {
+      val tmp1: T1 = this.map
+      val tmp2 = tmp1.map(x => x._2 * x._2.power(x._1)).reduce(_ + _)
+      tmp2
+    }
+
+    def add(other: T2): T2 = {
 
       val tmp3 = field.zero
       val exponents = (map.keySet ++ other.map.keySet).toList
