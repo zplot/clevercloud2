@@ -147,7 +147,7 @@ class PolynomialsOverFp private(val field: Fp)  {
    */
   object Polynomial {
 
-    val fatherPolynomialOverFp = PolynomialsOverFp.this
+    val fatherPolynomialOverFp: PolynomialsOverFp = PolynomialsOverFp.this
 
     def apply(map: T1): T2 = {
 
@@ -180,7 +180,7 @@ class PolynomialsOverFp private(val field: Fp)  {
 
   class Polynomial private(val map: T1)  {
 
-    def evaluate(x: field.T2): Any = {
+    def evaluate(x: field.T2): field.T2 = {
       val tmp1: T1 = this.map
       val tmp2 = tmp1.map(x => x._2 * x._2.power(x._1)).reduce(_ + _)
       tmp2
