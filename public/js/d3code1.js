@@ -1,10 +1,6 @@
 export default function define(runtime, observer) {
   const main = runtime.module();
-  main.variable(observer()).define(["md"], function(md){return(
-md`# Polynomial Graph
 
-for selected polynomial over Fp`
-)});
   main.variable(observer("chart")).define("chart", ["data","d3","width","height","DOM","drag"], function(data,d3,width,height,DOM,drag)
 {
   const links = data.links.map(d => Object.create(d));
