@@ -1,14 +1,10 @@
 package models.algebra
 
-
-
-object PolyGraph {
+object PolynomialGraph {
 
 }
 
-
-
-case class PolyGraph(prime: Int, polynomialMap: Map[Int, Int]) {
+case class PolynomialGraph(prime: Int, polynomialMap: Map[Int, Int]) {
 
   val p: Int = prime
   val cuerpo: Fp = Fp(p)
@@ -27,22 +23,5 @@ case class PolyGraph(prime: Int, polynomialMap: Map[Int, Int]) {
   val edges: Set[EdgeFp] = (0 until p).toList.map(x => EdgeFp(NodeFp(GFdeX.field.builder(x)), NodeFp(evalPoly(GFdeX.field.builder(x))))).toSet
 }
 
-object PolynomialGraph extends App {
 
-
-
-
-
-
-
-  val f = Map(2 -> 1)
-  println(PolyGraph(5, f))
-  println(PolyGraph(5, f).nodes)
-  println(PolyGraph(5, f).edges)
-
-
-
-
-
-}
 
