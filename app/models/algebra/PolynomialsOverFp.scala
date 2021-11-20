@@ -180,10 +180,11 @@ class PolynomialsOverFp private(val field: Fp)  {
 
   class Polynomial private(val map: T1)  {
 
-    def evaluate(x: field.T2): field.T2 = {
+    def evaluate(s: field.T2): field.T2 = {
       val tmp1: T1 = this.map
-      val tmp2 = tmp1.map(x => x._2 * x._2.power(x._1)).reduce(_ + _)
-      tmp2
+      val tmp2 = tmp1.map(x => x._2 * (s.power(x._1)))
+      val tmp3 = tmp2.reduce(_ + _)
+      tmp3
     }
 
     def add(other: T2): T2 = {
