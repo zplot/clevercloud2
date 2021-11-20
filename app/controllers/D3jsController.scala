@@ -28,4 +28,10 @@ class D3jsController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.functionplot(pageTitle))
   }
 
+  def nodos = Action {
+
+
+    Ok(views.html.nodos())
+  }
+
 }
