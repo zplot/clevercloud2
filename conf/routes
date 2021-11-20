@@ -28,6 +28,9 @@ POST    /graph2                    controllers.GraphController.askForData
 
 GET     /nodos                     controllers.D3jsController.nodos
 
+GET     /form2                    controllers.FormController2.showAnswer
+POST    /form2                    controllers.FormController2.askForData
+
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 

@@ -1,0 +1,88 @@
+@(textoPasado: SentData2)
+
+
+
+
+
+<!DOCTYPE html>
+
+<html class="loading" lang="en" data-textdirection="ltr">
+
+    <head>
+        @generichead("Resultados")
+    </head>
+
+    <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
+
+            <!-- BEGIN: Header-->
+        <header class="page-topbar" id="header">
+            <div class="navbar navbar-fixed">
+                <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
+                    <div class="nav-wrapper">
+                        <div class="header-search-wrapper hide-on-med-and-down">
+                            <div class="cabecero">Math & Code, a place to experiment math and code</div>
+                            <ul class="search-list collection display-none"></ul>
+                        </div>
+
+                        <ul class="navbar-list right">
+
+                            <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light toggle-fullscreen" href="javascript:void(0);"><i class="material-icons">settings_overscan</i></a></li>
+                            <li class="hide-on-large-only search-input-wrapper"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        @sidenav()
+
+            <!-- BEGIN: Page Main-->
+        <div id="main">
+            <div class="row">
+                <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+                <div class="col s12">
+                    <div class="container">
+                        <div class="section" id="knowledge">
+                            <div class="row knowledge-content">
+                                <div class="col s12 card-content-link">
+                                    <div class="card z-depth-0 card-border-gray pb-3">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col s12">
+                                                    <div class="contenido">
+
+                                                        <h2>@textoPasado</h2>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-overlay"></div>
+            </div>
+        </div>
+
+        <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
+            <div class="footer-copyright">
+                <div class="container"><span>&copy; 2021          <a href="#" target="_blank">Luis Fontes</a> All rights reserved.</span><span class="right hide-on-small-only">Math & Code</span></div>
+            </div>
+        </footer>
+
+        <script src="@routes.Assets.versioned("js/vendors.min.js")"></script>
+        <script src="@routes.Assets.versioned("js/plugins.js")"></script>
+        <script src="@routes.Assets.versioned("js/search.js")"></script>
+        <script src="@routes.Assets.versioned("js/custom/custom-script.js")"></script>
+        <script src="@routes.Assets.versioned("js/scripts/customizer.js")"></script>
+        <script src="@routes.Assets.versioned("js/scripts/advance-ui-modals.js")"></script>
+
+
+
+
+    </body>
+</html>
+

@@ -1,0 +1,35 @@
+@(form: Form[Form2.Data2], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+@mainViewToIncludeForm("Request") {
+
+    <h1>Please enter your request</h1>
+
+    @* Flash shows updates to a page *@
+    @request.flash.data.map{ case (name, value) =>
+    <div>@name: @value</div>
+    }
+
+
+
+    @* Global errors are not tied to any particular form field *@
+    @if(form.hasGlobalErrors) {
+        @form.globalErrors.map { error: FormError =>
+            <div>
+                @error.key: @error.message
+            </div>
+        }
+    }
+
+    @helper.form(postUrl) {
+        @helper.CSRF.formField
+
+        @helper.inputText(form("name"))
+
+
+
+        <button class="btn mb-1 waves-effect waves-light mr-1" type="submit" name="action">Submit</button>
+
+
+    }
+}
+    l>
