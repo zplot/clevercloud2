@@ -33,9 +33,7 @@
 
     @helper.form(postUrl) {
       @helper.CSRF.formField
-
       @helper.inputText(form("name"))
-
       @helper.inputText(form("price"))
 
       <button>Create widget</button>

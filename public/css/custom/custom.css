@@ -23,4 +23,7 @@ label {
     width: 300px !important;
 
 }
+.observablehq--inspect {
+    display: none;
+}
 
