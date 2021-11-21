@@ -5,8 +5,8 @@
     <h1>Please enter your request</h1>
 
     @* Flash shows updates to a page *@
-    @request.flash.data.map{ case (name, value) =>
-    <div>@name: @value</div>
+    @request.flash.data.map{ case (poly, value) =>
+    <div>@poly: @value</div>
     }
 
 
@@ -23,7 +23,7 @@
     @helper.form(postUrl) {
         @helper.CSRF.formField
 
-        @helper.inputText(form("name"))
+        @helper.inputText(form("poly"))
 
 
 

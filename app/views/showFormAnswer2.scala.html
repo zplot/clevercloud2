@@ -52,21 +52,25 @@
                                                     <div class="contenido">
 
                                                         <h2>@textoPasado</h2>
-
-
                                                         <div id="graphbox">
-
-
-
-
-
-
-                                                        <script type="module">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module">
                                                                 function define(runtime, observer) {
                                                                     const main = runtime.module();
 
-                                                                    main.variable(observer("chart")).define("chart", ["data","d3","width","height","DOM","drag"], function(data,d3,width,height,DOM,drag)
-                                                                            {
+                                                                    main.variable(observer("chart")).define("chart", ["data", "d3", "width", "height", "DOM", "drag"], function (data, d3, width, height, DOM, drag) {
                                                                                 const links = data.links.map(d => Object.create(d));
                                                                                 const nodes = data.nodes.map(d => Object.create(d));
 
@@ -125,7 +129,9 @@
                                                                                         .attr("pointer-events", "none")
                                                                                         .style("font-family", "sans-serif")
                                                                                         .style("font-size", "0.7em")
-                                                                                        .text(function(d) { return d.id; })
+                                                                                        .text(function (d) {
+                                                                                            return d.id;
+                                                                                        })
 
                                                                                 function ticked() {
                                                                                     link
@@ -140,170 +146,167 @@
 
                                                                                     text
                                                                                             .attr("transform",
-                                                                                                    function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+                                                                                                    function (d) {
+                                                                                                        return "translate(" + d.x + "," + d.y + ")";
+                                                                                                    })
                                                                                 }
 
                                                                                 return svg.node();
                                                                             }
                                                                     );
-                                                                    main.variable(observer("data")).define("data", function(){return(
-                                                                            {
-                                                                                "directed": false,
-                                                                                "multigraph": true,
-                                                                                "graph": {},
-                                                                                "nodes": [
-                                                                                    {
-                                                                                        "id": "13"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "0"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "1"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "2"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "3"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "4"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "5"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "6"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "7"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "8"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "9"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "10"
-                                                                                    },
-                                                                                    {
-                                                                                        "id": "11"
-                                                                                    }
-                                                                                ],
-                                                                                "links": [
-                                                                                    {
-                                                                                        "source": "1",
-                                                                                        "target": "2"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "2",
-                                                                                        "target": "3"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "3",
-                                                                                        "target": "4"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "3",
-                                                                                        "target": "5"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "6",
-                                                                                        "target": "2"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "8",
-                                                                                        "target": "7"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "4",
-                                                                                        "target": "1"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "3",
-                                                                                        "target": "8"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "7",
-                                                                                        "target": "3"
-                                                                                    },
-                                                                                    {
-                                                                                        "source": "2",
-                                                                                        "target": "5"
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                    )});
-                                                                    main.variable(observer("height")).define("height", function(){return(
-                                                                            600
-                                                                    )});
-                                                                    main.variable(observer("color")).define("color", ["d3"], function(d3)
-                                                                            {
+                                                                    main.variable(observer("data")).define("data", function () {
+                                                                        return (
+                                                                                {
+                                                                                    "directed": false,
+                                                                                    "multigraph": true,
+                                                                                    "graph": {},
+                                                                                    "nodes": [
+                                                                                        {
+                                                                                            "id": "13"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "0"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "1"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "2"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "3"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "4"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "5"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "6"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "7"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "8"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "9"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "10"
+                                                                                        },
+                                                                                        {
+                                                                                            "id": "11"
+                                                                                        }
+                                                                                    ],
+                                                                                    "links": [
+                                                                                        {
+                                                                                            "source": "1",
+                                                                                            "target": "2"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "2",
+                                                                                            "target": "3"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "3",
+                                                                                            "target": "4"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "3",
+                                                                                            "target": "5"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "6",
+                                                                                            "target": "2"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "8",
+                                                                                            "target": "7"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "4",
+                                                                                            "target": "1"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "3",
+                                                                                            "target": "8"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "7",
+                                                                                            "target": "3"
+                                                                                        },
+                                                                                        {
+                                                                                            "source": "2",
+                                                                                            "target": "5"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                        )
+                                                                    });
+                                                                    main.variable(observer("height")).define("height", function () {
+                                                                        return (
+                                                                                400
+                                                                        )
+                                                                    });
+                                                                    main.variable(observer("color")).define("color", ["d3"], function (d3) {
                                                                                 const scale = d3.scaleOrdinal(d3.schemeCategory10);
                                                                                 return d => scale(d.group);
                                                                             }
                                                                     );
-                                                                    main.variable(observer("drag")).define("drag", ["d3"], function(d3){return(
-                                                                            simulation => {
+                                                                    main.variable(observer("drag")).define("drag", ["d3"], function (d3) {
+                                                                        return (
+                                                                                simulation => {
 
-                                                                                function dragstarted(d) {
-                                                                                    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-                                                                                    d.fx = d.x;
-                                                                                    d.fy = d.y;
+                                                                                    function dragstarted(d) {
+                                                                                        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                                                                                        d.fx = d.x;
+                                                                                        d.fy = d.y;
+                                                                                    }
+
+                                                                                    function dragged(d) {
+                                                                                        d.fx = d3.event.x;
+                                                                                        d.fy = d3.event.y;
+                                                                                    }
+
+                                                                                    function dragended(d) {
+                                                                                        if (!d3.event.active) simulation.alphaTarget(0);
+                                                                                        d.fx = null;
+                                                                                        d.fy = null;
+                                                                                    }
+
+                                                                                    return d3.drag()
+                                                                                            .on("start", dragstarted)
+                                                                                            .on("drag", dragged)
+                                                                                            .on("end", dragended);
                                                                                 }
-
-                                                                                function dragged(d) {
-                                                                                    d.fx = d3.event.x;
-                                                                                    d.fy = d3.event.y;
-                                                                                }
-
-                                                                                function dragended(d) {
-                                                                                    if (!d3.event.active) simulation.alphaTarget(0);
-                                                                                    d.fx = null;
-                                                                                    d.fy = null;
-                                                                                }
-
-                                                                                return d3.drag()
-                                                                                        .on("start", dragstarted)
-                                                                                        .on("drag", dragged)
-                                                                                        .on("end", dragended);
-                                                                            }
-                                                                    )});
-                                                                    main.variable(observer("d3")).define("d3", ["require"], function(require){return(
-                                                                            require("https://d3js.org/d3.v5.min.js")
-                                                                    )});
+                                                                        )
+                                                                    });
+                                                                    main.variable(observer("d3")).define("d3", ["require"], function (require) {
+                                                                        return (
+                                                                                require("https://d3js.org/d3.v5.min.js")
+                                                                        )
+                                                                    });
                                                                     return main;
                                                                 }
 
 
-                                                                import {Runtime, Library, Inspector} from "@routes.Assets.versioned("js/runtime.js")";
+                                                                import {
+                                                                    Runtime,
+                                                                    Library,
+                                                                    Inspector
+                                                                } from "@routes.Assets.versioned("js/runtime.js")";
 
                                                                 const runtime = new Runtime();
                                                                 const main = runtime.module(define, Inspector.into(document.getElementById("graphbox")));
 
                                                         </script>
 
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
         <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
             <div class="footer-copyright">
-                <div class="container"><span>&copy; 2021          <a href="#" target="_blank">Luis Fontes</a> All rights reserved.</span><span class="right hide-on-small-only">Math & Code</span></div>
+                <div class="container"><span>&copy; 2021 <a href="#" target="_blank">Luis Fontes</a> All rights reserved.</span><span class="right hide-on-small-only">Math & Code</span></div>
             </div>
         </footer>
 

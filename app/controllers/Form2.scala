@@ -10,7 +10,7 @@ object Form2 {
    * Using a class specifically for form binding reduces the chances
    * of a parameter tampering attack and makes code clearer.
    */
-  case class Data(name: String)
+  case class Data(p: Int, poly: String)
 
   /**
    * The form definition for the "create a widget" form.
@@ -19,7 +19,8 @@ object Form2 {
    */
   val form = Form(
     mapping(
-      "name" -> nonEmptyText
+      "p" -> number,
+      "poly" -> nonEmptyText
     )(Data.apply)(Data.unapply)
   )
 }

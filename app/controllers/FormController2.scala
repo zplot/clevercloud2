@@ -44,7 +44,7 @@ class FormController2 @Inject()(cc: MessagesControllerComponents) extends Messag
 
     val successFunction = { data: Data =>
       // This is the good case, where the form was successfully parsed as a Data object.
-      val textoPasado = SentData2(name = data.name)
+      val textoPasado = SentData2(p = data.p, poly = data.poly)
 
 
       // Redirect(routes.WidgetController2.listWidgets).flashing("info" -> "Widget added!")
